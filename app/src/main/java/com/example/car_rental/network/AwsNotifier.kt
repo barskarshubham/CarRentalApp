@@ -1,6 +1,7 @@
 package com.example.car_rental.network
 
-import com.example.car_rental.networkInterface.NotifierInterface
+import com.example.car_rental.NotifierInterface
+
 
 //import software.amazon.awssdk.services.sns.SnsClient
 //import software.amazon.awssdk.services.sns.model.PublishRequest
