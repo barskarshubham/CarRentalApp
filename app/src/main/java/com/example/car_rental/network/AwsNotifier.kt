@@ -1,9 +1,12 @@
 package com.example.car_rental.network
+
+import com.example.car_rental.networkInterface.NotifierInterface
+
 //import software.amazon.awssdk.services.sns.SnsClient
 //import software.amazon.awssdk.services.sns.model.PublishRequest
 
-class AwsNotifier {
-    fun sendAlert(phoneNumber: String, message: String) {
+class AwsNotifier : NotifierInterface{
+    override fun sendAlert(userToken: String, phoneNo: String, message: String) {
 //        val snsClient = SnsClient.create()
 //        val request = PublishRequest.builder()
 //            .phoneNumber(phoneNumber)

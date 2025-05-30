@@ -32,13 +32,14 @@ class CarRentalViewModel: ViewModel() {
     }
 
     private fun sendAlert(message: String) {
+        val phoneNo = "1234566789";
         // Call Firebase Messaging to notify renter
         //give alert to the user
         if(!message.isNullOrEmpty()) {
             _speedAlert.postValue(message)
             //send alert to car rental company
-            FirebaseNotifier().sendNotification(MyFirebaseInstanceIDService().getToken(),message)
-            AwsNotifier().sendAlert("1234566789",message)
+            FirebaseNotifier().sendAlert(MyFirebaseInstanceIDService().getToken(),phoneNo,message)
+            AwsNotifier().sendAlert(MyFirebaseInstanceIDService().getToken(),phoneNo,message)
         }
         else
             _speedAlert.postValue(null)
